@@ -1,4 +1,4 @@
-
+//Company class with a constructor taking the properties value as parameters.
 public class Company {
 	String NameofCompany;
 	double StockPrice;

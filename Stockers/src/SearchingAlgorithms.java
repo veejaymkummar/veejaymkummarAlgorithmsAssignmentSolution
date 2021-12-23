@@ -1,12 +1,15 @@
-
+//Searching Algorithms
 public class SearchingAlgorithms 
 {
+	//Method to count the companies by traversing through the array and increasing the counter basis the condition
+
 	public static void CountCompanies(Company comp[], String Condition)
 	{
 		int counter = 0 ;
 		boolean condition = false ;
 		System.out.println();
-		if (Condition =="true")
+	//basis the condition running the loop to count the stocks which has increased
+		if (Condition.equals("true"))
 		{
 			condition=true;
 			for (int i = 0 ; i < comp.length; i++)
@@ -18,7 +21,8 @@ public class SearchingAlgorithms
 				}
 			}
 		}
-		if (Condition =="false")
+		//basis the condition running the loop to count the stocks which has declined
+		if (Condition.equals("false"))
 		{
 			condition = false;
 			for (int i = 0 ; i < comp.length; i++)
@@ -31,6 +35,7 @@ public class SearchingAlgorithms
 			}
 		}
 		System.out.println();
+		//Displaying messages basis the condition
 		if (counter > 0 )
 		{
 			if (!condition)
@@ -42,6 +47,7 @@ public class SearchingAlgorithms
 				System.out.println("Total no of companies whose stock price rose today: " + Integer.toString(counter));
 			}
 		}
+		// if no stock found with the condition then display message basis the condition
 		if (counter == 0 )
 		{
 			if (!condition)
@@ -54,6 +60,7 @@ public class SearchingAlgorithms
 			}
 		}
 	 }
+	//This is the method to search a company with a specific stock value
 	 public static void SearchCompany(double StockValue, Company comp[])
 	 {
 		 boolean found = false;
@@ -62,7 +69,7 @@ public class SearchingAlgorithms
 		 {
 			double StockPrice= comp[i].StockPrice;
 			if (StockPrice == StockValue) 
-			{
+			{//if found then displaying the company detail for that particular stock value
 				found = true;
 				System.out.println();
 				System.out.println("Name of Company: " + comp[i].NameofCompany);
@@ -72,6 +79,7 @@ public class SearchingAlgorithms
 				break;
 			}
 		 }
+		 //if not found then displaying not found message
 		if (found == false)
 		 {
 			 System.out.println("No Stock with " + StockValue + " Stock Value found");
